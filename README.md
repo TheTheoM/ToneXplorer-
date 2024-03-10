@@ -11,6 +11,7 @@ pip install PyQt6 pyqtgraph numpy sounddevice scipy
 
 
 # Usage:
+Change to the ToneXplorer directory then run:
 ```bash
 python ToneXplorer.py
 ```
