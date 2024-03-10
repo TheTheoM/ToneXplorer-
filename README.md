@@ -23,8 +23,10 @@ You can smoothed the graph through the Smoothing Value Input. This also impacts 
 ![image](https://github.com/TheTheoM/ToneXplorer-/assets/103237702/17207ffa-f986-48d1-ad28-71592ef4efb6)
 
 The Outputed EQ Bands are printed to the console, to change the eq-bands, select one of the 5 bands on the right, and click play and plot Spectrum.
+
 ![image](https://github.com/TheTheoM/ToneXplorer-/assets/103237702/9ff691e0-597b-4f7f-a3e9-cb3033825c37)
-Example EQ Output
+
+Example EQ-Bands Output
 ```
 # GraphicEQ: 25 5.0; 40 -7.41; 63 -11.07; 100 -9.66; 160 -8.02; 250 -10.0; 400 -6.76; 630 -5.9; 1000 -8.75; 1600 -2.73; 2500 2.61; 4000 4.58; 6300 8; 10000 8; 16000 8;
 ```
