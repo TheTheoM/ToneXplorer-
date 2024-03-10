@@ -192,8 +192,8 @@ class SpectrogramApp(QWidget):
         plot_item.setLabel('left', 'Amplitude (dB)')
         targetLevel = round(np.mean(plot_Data[0:4000]), 2)  # Lower and Mid Freqs
         interpolated_target_curve = np.interp(plot_Data, np.arange(len(self.target_curve)), self.target_curve)
-        centered_interpolated_target_curve = interpolated_target_curve - np.mean(interpolated_target_curve) + targetLevel         # Centering the interpolated_target_curve around the targetLevel
-        plot_item.plot(self.frequencies, interpolated_target_curve, pen=(0, 10, 50), stepMode='right')  
+        centered_interpolated_target_curve = interpolated_target_curve - np.mean(interpolated_target_curve) + targetLevel         
+        plot_item.plot(self.frequencies, centered_interpolated_target_curve, pen=(0, 10, 50), stepMode='right')  
         avgDbBans, eqString = self.generate_eq_settings(self.start_freq, self.end_freq, self.frequencies, plot_Data, targetLevel)
         
         print(eqString)
@@ -213,7 +213,7 @@ class SpectrogramApp(QWidget):
                     125: 0, 160: 0, 200: 0, 250: 0, 315: 0, 400: 0, 500: 0, 630: 0,
                     800: 0, 1000: 0, 1250: 0, 1600: 0, 2000: 0, 2500: 0, 3150: 0,
                     4000: 0, 5000: 0, 6300: 0, 8000: 0, 10000: 0, 12500: 0, 16000: 0, 20000: 0}
-        
+            
 
  
 
