@@ -17,7 +17,7 @@ class SpectrogramApp(QWidget):
     def __init__(self):
         super().__init__()
         self.start_freq, self.end_freq = 20, 20000
-        self.duration = 2
+        self.duration = 5
         self.sample_freq = 44100
         self.smoothen_Window_Size = 15
         self.frequencies = np.zeros(0)
@@ -134,15 +134,11 @@ class SpectrogramApp(QWidget):
             self.eq_band_value = int(sender.text().replace(" Bands", "")) #"7 Bands" => 7
             print("Checked Value:", self.eq_band_value)
 
+    def frequency_sweep(self, start_freq, stop_freq, sweep_time, sample_rate):
+        t = np.linspace(0, sweep_time, int(sample_rate * sweep_time))
+        sweep = chirp(t, f0=start_freq, f1=stop_freq, t1=sweep_time, method='logarithmic')
+        return sweep
         
-        
-    def geom_chirp(self, f0: float, f1: float, secs: float, rate: int):
-        n = int(secs * (f1 - f0) / np.log(f1 / f0))
-        k = np.exp((f1 - f0) / n)  
-        secs = np.log(f1 / f0) / np.log(k)
-        t = np.arange(0, secs * rate) / rate
-        chirp_wave = np.sin(2 * np.pi * f0 * (k ** t - 1) / np.log(k))
-        return chirp_wave
 
     def smooth_it(self, data, window_size):
         """Smooths magnitude_db"""
@@ -164,7 +160,7 @@ class SpectrogramApp(QWidget):
     def play_and_plot(self):
         self.start_freq = self.lower_freq_spinbox.value()
         self.end_freq   = self.upper_freq_spinbox.value()
-        linear_sweep_wave = self.geom_chirp(self.start_freq, self.end_freq, self.duration, self.sample_freq)
+        linear_sweep_wave = self.frequency_sweep(self.start_freq, self.end_freq, self.duration, self.sample_freq)
         # linear_sweep_wave = np.zeros(int(self.duration * self.sample_freq))
         recorded_signal = sd.playrec(linear_sweep_wave, samplerate=self.sample_freq, channels=1, blocking=True).flatten()
 
