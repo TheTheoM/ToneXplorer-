@@ -186,14 +186,14 @@ class SpectrogramApp(QWidget):
         plot_item = self.plot_widget.getPlotItem()
         plot_item.setLogMode(x=True) 
 
-        plot_item.plot(self.frequencies, plot_Data, pen=(0, 200, 50), stepMode='right')  # Plot using original frequencies
+        plot_item.plot(self.frequencies, plot_Data, pen=(0, 200, 50), stepMode='right')  
         plot_item.setTitle('Frequency Range')
         plot_item.setLabel('bottom', 'Frequency (Hz)')
         plot_item.setLabel('left', 'Amplitude (dB)')
         targetLevel = round(np.mean(plot_Data[0:4000]), 2)  # Lower and Mid Freqs
         interpolated_target_curve = np.interp(plot_Data, np.arange(len(self.target_curve)), self.target_curve)
         centered_interpolated_target_curve = interpolated_target_curve - np.mean(interpolated_target_curve) + targetLevel         # Centering the interpolated_target_curve around the targetLevel
-        plot_item.plot(self.frequencies, interpolated_target_curve, pen=(0, 10, 50), stepMode='right')  # Plot using original frequencies
+        plot_item.plot(self.frequencies, interpolated_target_curve, pen=(0, 10, 50), stepMode='right')  
         avgDbBans, eqString = self.generate_eq_settings(self.start_freq, self.end_freq, self.frequencies, plot_Data, targetLevel)
         
         print(eqString)
