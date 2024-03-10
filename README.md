@@ -21,7 +21,7 @@ Select the Start and End frequency you wish to test your device through and pres
 
 You can smoothed the graph through the Smoothing Value Input. This also impacts the curve that is eq'd against a flat curve.
 
-![image](https://github.com/TheTheoM/ToneXplorer-/assets/103237702/0da28fc7-226c-4c27-85de-c3af87f52a38)
+![image](https://github.com/TheTheoM/ToneXplorer-/assets/103237702/4d5dd1c4-b926-4959-a8e2-f22f157a12ee)
 
 
 The Outputed EQ Bands are printed to the console, to change the eq-bands, select one of the 5 bands on the right, and click play and plot Spectrum.
