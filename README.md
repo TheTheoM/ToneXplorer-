@@ -39,4 +39,5 @@ Example EQ-Bands Output. This is in the format accepted via Equaliser APO.
    - Output Parametric EQ curves.
    - Improve the eq-correction logic to using an optimization and target function instead of using the magnitude difference between the measured and target curve as the gain for the eq bands.
    - Add Automatic Testing with Feedback, which measures the curve, applies a correction, than measures the correction and optimizes untill within a flatness target threshold.
-   - Add better labeling to the x-axis of the graph, such that minor-ticks are labelled and endpoints.  
+   - Add better labeling to the x-axis of the graph, such that minor-ticks are labelled and endpoints.
+   - Improve how the target-level is calculated. Include more High Freqs.
