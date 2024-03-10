@@ -36,6 +36,6 @@ Example EQ-Bands Output. This is in the format accepted via Equaliser APO.
    - Display the correction EQ-bands on the GUI with a copy-to-clipboard option.
    - Display the target curve and add options to change it.
    - Output Parametric EQ curves.
-   - Improve the eq-correction logic to using an optimization and target function instead of using the magnitude difference between the measured and target curve as the gain for the eq curves.
+   - Improve the eq-correction logic to using an optimization and target function instead of using the magnitude difference between the measured and target curve as the gain for the eq bands.
    - Add Automatic Testing with Feedback, which measures the curve, applies a correction, than measures the correction and optimizes untill within a flatness target threshold.
    - Add better labeling to the x-axis of the graph, such that minor-ticks are labelled and endpoints.  
